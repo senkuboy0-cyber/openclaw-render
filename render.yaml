@@ -3,7 +3,7 @@ services:
     name: openclaw
     runtime: docker
     # Standard (~2GB RAM) is too small for a ~1.5GB+ Node heap + proxy; Pro (~4GB) fits NODE_OPTIONS below.
-    plan: pro
+    plan: free
     healthCheckPath: /health
     envVars:
       - key: PORT
@@ -31,7 +31,3 @@ services:
         sync: false
       - key: MINIMAX_API_KEY
         sync: false
-    disk:
-      name: openclaw-data
-      mountPath: /data
-      sizeGB: 5
